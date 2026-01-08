@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+/* Load specific weights you need */
+@import "@fontsource/poppins/300.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/700.css";
+
+@import "~bootstrap/scss/bootstrap";
+@import "~@flaticon/flaticon-uicons/css/all/all";
+@import "./tokens/build/scss/variables";
+* {
+  font-family: $font-family;
+  margin: 0;
+}

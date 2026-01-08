@@ -1,0 +1,41 @@
+<div class="body">
+  <div class="login-form-container ">
+    <div class="logo-wrapper">
+      <img src="../../assets/Logo.svg" />
+    </div>
+    <div class="text">
+      <p class="" >Please log in to manage office operations.</p>
+    </div>
+    <form action="" nz-form>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-form-label nzFor="" [nzNoColon]="true"
+            >Username <span class="required">*</span></nz-form-label
+          >
+          <input nz-input id="name" name="name" placeholder="Enter username" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="password field Required">
+          <nz-form-label nzFor="" [nzNoColon]="true"
+            >Password <span class="required">*</span></nz-form-label
+          >
+          <nz-input-group class="password-input">
+          <input
+            nz-input
+            id="password"
+            [type]="type"
+            name="password"
+            placeholder="Enter password"
+          />
+          <i class="lock fi fi-rr-eye" *ngIf="lock" (click)="isLock()"></i>
+          <i class="lock fi fi-rr-eye-crossed" *ngIf="!lock" (click)="isLock()"></i>
+        </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <button nz-button class="login-btn" nzType="primary">Login</button>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
