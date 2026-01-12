@@ -1,0 +1,13 @@
+@import "../../../../tokens/build/scss/variables";
+.list-item {
+    display: flex;
+    justify-content: space-between;
+  border-bottom: 1px solid $neutral-4;
+  padding: $padding-sm 0;
+
+  .flag{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}

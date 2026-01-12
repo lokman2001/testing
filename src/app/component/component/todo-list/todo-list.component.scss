@@ -1,0 +1,14 @@
+@import '../../../../tokens/build/scss/variables';
+.list-container{
+    border: $border-width-base $border-color-base $border-style-base;
+    border-radius: $border-radius-base;
+    padding: $padding-xs;
+    margin-bottom: $margin-sm;
+
+    .done{
+        text-decoration: line-through;
+    }
+    &.is-done{
+        background-color: $primary-1;
+    }
+}

@@ -8,7 +8,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@flaticon/flaticon-uicons/css/all/all";
 @import "./tokens/build/scss/variables";
+
 * {
-  font-family: $font-family;
-  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+main{
+  padding: 0 $padding-xl;
+}
+.outer-scroll{
+  margin-right: -$padding-md;
 }

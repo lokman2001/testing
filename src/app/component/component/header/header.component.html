@@ -1,0 +1,45 @@
+<header
+  class="header-container d-flex align-items-center justify-content-between"
+>
+  <section id="Logo" class="">
+    <img nz-image nzSrc="../../../../assets/Logo.svg" />
+  </section>
+  <div class="">
+    <nav class="cshadow">
+      <a routerLink="../dashboard" class="nav-item" routerLinkActive="active"
+        >Dashboard</a
+      ><a routerLink="../profile" class="nav-item" routerLinkActive="active"
+        >Profile</a
+      ><a
+        routerLink="../general_setting"
+        class="nav-item"
+        routerLinkActive="active"
+        >General Setting</a
+      ><a
+        routerLink="../user_activity"
+        class="nav-item"
+        routerLinkActive="active"
+        >User Activity</a
+      >
+    </nav>
+  </div>
+  <section id="user-section" class="d-flex">
+    <div class="d-flex  cshadow">
+      <img
+        nz-image
+        width="36px"
+        height="36px"
+        nzSrc="../../../../assets/user-foto/avatar=avator-2.jpg"
+        alt=""
+      />
+      <div class="d-flex">
+        <span class="ps-1">Alex Thompson</span>
+        <span class="ps-1">(Manager)</span>
+      </div>
+    </div>
+    <div class="cshadow  ">
+        <a class="logout" href=""><i class="fi fi-rr-sign-out-alt"></i></a>
+        
+    </div>
+  </section>
+</header>

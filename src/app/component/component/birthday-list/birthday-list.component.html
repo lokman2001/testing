@@ -1,0 +1,15 @@
+<div class="list-item">
+  <div class="list-photo-text">
+    <img nz-image [nzSrc]="data.imgSrc" alt="" width="48px" height="48px" />
+  <div>
+    <h5 nz-typography>{{ data.name }}</h5>
+    <span nz-typography>{{ data.role }}</span>
+  </div>
+  </div>
+  <div>
+    <nz-tag nzColor="processing">
+      <i class="fi fi-rr-cake-birthday"></i>  
+      <span class="ps-1">{{ data.birthday}}</span>
+    </nz-tag>
+  </div>
+</div>

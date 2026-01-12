@@ -30,11 +30,12 @@
           />
           <i class="lock fi fi-rr-eye" *ngIf="lock" (click)="isLock()"></i>
           <i class="lock fi fi-rr-eye-crossed" *ngIf="!lock" (click)="isLock()"></i>
+
         </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <button nz-button class="login-btn" nzType="primary">Login</button>
+        <button nz-button nzType="primary" class="w-100">Login</button>
       </nz-form-item>
     </form>
   </div>

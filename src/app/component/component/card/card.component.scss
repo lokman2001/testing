@@ -1,0 +1,13 @@
+@import "../../../../tokens/build/scss/variables";
+.card-container {
+  padding: $padding-sm;
+
+
+  .inner-card {
+    padding: $padding-lg;
+    border-radius: $border-radius-base;
+    -webkit-box-shadow: 0px 5px 10px -2px #878787;
+    box-shadow: 0px 3px 10px -2px #878787;
+    height: 100%;
+  }
+}
