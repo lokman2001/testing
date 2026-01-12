@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() public height = "auto"
+  @Input() public overflow = "auto"
   constructor() { }
 
   ngOnInit(): void {

@@ -30,13 +30,14 @@ import { TodoListComponent } from './component/component/todo-list/todo-list.com
 import { CardComponent } from './component/component/card/card.component';
 import { HeaderComponent } from './component/component/header/header.component';
 import { ListWrapperComponent } from './component/component/list-wrapper/list-wrapper.component';
+import { ContainerComponent } from './component/component/container/container.component';
 
 
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [ AppComponent, LoginComponent, DashboardComponent, MenubarComponent, BirthdayListComponent, HolidayListComponent, TodoListComponent, CardComponent, HeaderComponent, ListWrapperComponent, ],
+  declarations: [ AppComponent, LoginComponent, DashboardComponent, MenubarComponent, BirthdayListComponent, HolidayListComponent, TodoListComponent, CardComponent, HeaderComponent, ListWrapperComponent, ContainerComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,

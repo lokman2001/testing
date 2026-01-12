@@ -1,8 +1,9 @@
-<app-header> </app-header>
+<app-container>
+  <app-header> </app-header>
 <main>
-  <div class="row g-0" style="height: 100vh ; padding: 10px; box-sizing: border-box;">
+  <div class="d-flex g-0 align-items-stretch ">
     <section class="col-lg-8">
-      <app-card class="intro-section" >
+      <app-card class="intro-section">
         <h3 nz-typography>
           Smart, efficent Office msnagement to streamline tasks and boost
           workplace productivity.
@@ -20,13 +21,12 @@
           />
         </div>
       </app-card>
-      <div class="row g-0">
+      <div class="d-flex g-0 align-items-stretch ">
         <div class="col-lg-6">
-          <app-card>
-            <div class="outer-scroll">
-              <app-list-wrapper height="48vh">
+          <app-card height="50vh">
+            
                 <div
-                  class="d-flex justify-content-between sticky-top bg-white pb-1"
+                  class="d-flex justify-content-between "
                 >
                   <h5 nz-typography>Birthdays</h5>
                   <span nz-typography>December 2025</span>
@@ -43,15 +43,13 @@
                     [data]="user"
                   ></app-birthday-list>
                 </div>
-              </app-list-wrapper>
-            </div>
+              
+  
           </app-card>
         </div>
         <div class="col-lg-6">
-          <app-card>
-            <div class="outer-scroll">
-              <app-list-wrapper height="48vh">
-                <div class="sticky-top bg-white pb-1">
+          <app-card height="50vh" class="pt-0">
+                <div class="sticky-top bg-white pt-0">
                   <h5 nz-typography class="">2025 Public Holidays</h5>
                   <div class="d-blocks">
                     <nz-tag *ngFor="let c of country">{{ c }}</nz-tag>
@@ -65,14 +63,12 @@
                   >
                   </app-holiday-list>
                 </div>
-              </app-list-wrapper>
-            </div>
           </app-card>
         </div>
       </div>
     </section>
     <section class="col-lg-4" >
-      <app-card height="100%">
+      <app-card height="100vh" overflow="auto">
             <div class="d-flex justify-content-between sticky-top bg-white">
               <h5 nz-typography>To Do List</h5>
               <div>
@@ -91,3 +87,5 @@
     </section>
   </div>
 </main>
+
+</app-container>
