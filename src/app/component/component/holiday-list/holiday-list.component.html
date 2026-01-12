@@ -1,17 +1,12 @@
 <div class="list-item">
   <div class="list-text">
-    <h5 nz-typography>{{ holiday.holiday_name}}</h5>
-    <span nz-typography>{{ holiday.start_date }}</span>
+    <p nz-typography>{{ holiday.holiday_name}}</p>
+    <small nz-typography>{{ holiday.start_date }}</small>
   </div>
   <div>
     <div class="flag">
-         <img
-      nz-image
-      width="36px"
-      nzSrc="../../../../assets/flag-icons/{{ holiday.country }}.png"
-      alt=""
-    />
-    <small nz-typography>Coming Soon</small>
+      <img nz-image width="36px" nzSrc="../../../../assets/flag-icons/{{ holiday.country }}.png" alt="" />
+      <small nz-typography>Coming Soon</small>
     </div>
   </div>
 </div>

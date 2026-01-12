@@ -1,91 +1,80 @@
-<app-container>
-  <app-header> </app-header>
-<main>
-  <div class="d-flex g-0 align-items-stretch ">
-    <section class="col-lg-8">
-      <app-card class="intro-section">
-        <h3 nz-typography>
-          Smart, efficent Office msnagement to streamline tasks and boost
-          workplace productivity.
-        </h3>
-        <div class="row">
-          <div class="col-7">
-            <p *ngFor="let p of introParagraphs" nz-typography>{{ p }}</p>
+<app-header> </app-header>
+
+<div class="d-flex flex-wrap g-0 vh-100 px-4">
+  <section class="h-100 col-lg-8 col-sm-12">
+    <section id="introduction" class="h-50 ">
+      <app-card>
+        <div header>
+          <h4 nz-typography>
+            Smart, efficent Office msnagement to streamline tasks and boost
+            workplace productivity.
+          </h4>
+        </div>
+        <div body class="row col-lg-12 px-3">
+          <div class="col-lg-8">
+            <p nz-typography *ngFor="let p of introParagraphs" class="m-1">
+              {{ p }}
+            </p>
+          </div>
+          <div class="col-lg-4 d-flex align-items-end">
+            <img nz-image nzSrc="../../../assets/dashboardPhoto.png" alt="" width="100%" class="">
           </div>
 
-          <img
-            nz-image
-            class="col-lg-5"
-            nzSrc="./../../../assets/dashboardPhoto.png"
-            alt=""
-          />
         </div>
       </app-card>
-      <div class="d-flex g-0 align-items-stretch ">
-        <div class="col-lg-6">
-          <app-card height="50vh">
-            
-                <div
-                  class="d-flex justify-content-between "
-                >
-                  <h5 nz-typography>Birthdays</h5>
-                  <span nz-typography>December 2025</span>
-                </div>
-                <div>
-                  <h6>Today</h6>
-                  <app-birthday-list
-                    *ngFor="let user of users"
-                    [data]="user"
-                  ></app-birthday-list>
-                  <h6>This Month</h6>
-                  <app-birthday-list
-                    *ngFor="let user of users"
-                    [data]="user"
-                  ></app-birthday-list>
-                </div>
-              
-  
-          </app-card>
-        </div>
-        <div class="col-lg-6">
-          <app-card height="50vh" class="pt-0">
-                <div class="sticky-top bg-white pt-0">
-                  <h5 nz-typography class="">2025 Public Holidays</h5>
-                  <div class="d-blocks">
-                    <nz-tag *ngFor="let c of country">{{ c }}</nz-tag>
-                  </div>
-                </div>
+    </section>
+    <div class="row g-0 h-50">
+      <section id="birthdays" class="col-lg-6 h-100">
+        <app-card>
+          <div header class=" d-flex justify-content-between">
+            <h6 nz-typography>Birthdays</h6>
+            <small nz-typography>December 2025</small>
+          </div>
+          <app-list-wrapper body height="90%" overflow="auto">
+            <div class="ps-3">
+              <app-birthday-list *ngFor="let user of users" [data]="user"></app-birthday-list>
+            </div>
+          </app-list-wrapper>
 
-                <div>
-                  <app-holiday-list
-                    *ngFor="let holiday of holidays"
-                    [holiday]="holiday"
-                  >
-                  </app-holiday-list>
-                </div>
-          </app-card>
+        </app-card>
+      </section>
+      <section id="holidays" class="col-lg-6 h-100">
+        <app-card>
+          <div header class=" d-flex justify-content-between">
+            <h6 nz-typography>Holidays</h6>
+            <small nz-typography>December 2025</small>
+          </div>
+          <app-list-wrapper body height="90%" overflow="auto">
+            <div class="sticky-top p-3 pe-2 pb-1 bg-white"><nz-tag nzColor="default" *ngFor="let c of country">{{ c
+                }}</nz-tag>
+            </div>
+            <div class="ps-3">
+              <app-holiday-list *ngFor="let holiday of holidays" [holiday]="holiday"></app-holiday-list>
+            </div>
+          </app-list-wrapper>
+
+        </app-card>
+      </section>
+    </div>
+  </section>
+  <section id="todo" class="col-lg-4 h-100 col-sm-12">
+    <app-card>
+      <div class="d-flex justify-content-between" header>
+        <h5 nz-typography>To Do List</h5>
+        <div>
+          <small nz-typography class="border-end">
+            <i class="fi fi-rr-calendar-day"></i>
+            December 2025
+          </small>
+          <i class="fi fi-rr-up-right-from-square p-1"></i>
         </div>
       </div>
-    </section>
-    <section class="col-lg-4" >
-      <app-card height="100vh" overflow="auto">
-            <div class="d-flex justify-content-between sticky-top bg-white">
-              <h5 nz-typography>To Do List</h5>
-              <div>
-                <small nz-typography class="border-end">
-                  <i class="fi fi-rr-calendar-day"></i>
-                  December 2025
-                </small>
-                <i class="fi fi-rr-up-right-from-square p-1"></i>
-              </div>
-            </div>
-            <div>
-              <app-todo-list *ngFor="let list of todoList" [list]="list">
-              </app-todo-list>
-            </div>
-      </app-card>
-    </section>
-  </div>
-</main>
+      <app-list-wrapper body height="95%" overflow="auto">
 
-</app-container>
+        <div class="ps-3">
+          <app-todo-list *ngFor="let list of todoList" [list]="list"></app-todo-list>
+        </div>
+      </app-list-wrapper>
+    </app-card>
+  </section>
+</div>

@@ -1,12 +1,11 @@
 @import "../../../../tokens/build/scss/variables";
 
 .header-container {
-    background: $neutral-1;
-    padding: $padding-lg $padding-xl;
-    position: sticky;
-    width: 100%;
-    top : 0;
-    z-index: 3000;
+  background: $neutral-1;
+  padding: $padding-lg $padding-xl;
+  position: sticky;
+  top: 0;
+  z-index: 3000;
   nav {
     display: inline-block;
     border-radius: $border-radius-base;
@@ -24,29 +23,27 @@
       }
     }
   }
-  #user-section{
+  #user-section {
     gap: $padding-xs;
-    div{
-        padding: $padding-xxs;
+    div {
+      padding: $padding-xxs;
+      border-radius: $border-radius-base;
+
+      img {
         border-radius: $border-radius-base;
-
-        img{
-            border-radius: $border-radius-base;
-        }
-        .logout{
-            color: $text-color;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            aspect-ratio: 1/1;
-        }
-
+      }
+      .logout {
+        color: $text-color;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        aspect-ratio: 1/1;
+      }
     }
-
   }
-  .cshadow{
+  .cshadow {
     -webkit-box-shadow: 0px 3px 10px -2px #878787;
     box-shadow: 0px 3px 10px -2px #878787;
   }
