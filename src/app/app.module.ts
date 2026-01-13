@@ -10,12 +10,12 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
-import { NzImageModule } from 'ng-zorro-antd/image'
+import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzTagModule } from 'ng-zorro-antd/tag'
-import { NzCardModule }from 'ng-zorro-antd/card'
-import { NzAvatarModule } from 'ng-zorro-antd/avatar'
-import { NzEmptyModule } from 'ng-zorro-antd/empty'
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -37,13 +37,31 @@ import { MainComponent } from './main/main.component';
 import { HolidayFilterPipe } from './pipe/holiday-filter/holiday-filter.pipe';
 import { DateSortPipe } from './pipe/date-sort/date-sort.pipe';
 import { DropDownMenuComponent } from './component/component/drop-down-menu/drop-down-menu.component';
-
-
+import { CustomerListComponent } from './component/customer-list/customer-list.component';
+import { CustomerCreateEditComponent } from './component/customer-create-edit/customer-create-edit.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [ AppComponent, LoginComponent, DashboardComponent, MenubarComponent, BirthdayListComponent, HolidayListComponent, TodoListComponent, CardComponent, HeaderComponent, ListWrapperComponent, ContainerComponent, MainComponent, HolidayFilterPipe, DateSortPipe, DropDownMenuComponent, ],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    MenubarComponent,
+    BirthdayListComponent,
+    HolidayListComponent,
+    TodoListComponent,
+    CardComponent,
+    HeaderComponent,
+    ListWrapperComponent,
+    ContainerComponent,
+    MainComponent,
+    HolidayFilterPipe,
+    DateSortPipe,
+    DropDownMenuComponent,
+    CustomerListComponent,
+    CustomerCreateEditComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -2,25 +2,23 @@
 
 .header-container {
   background: $neutral-3;
-  padding: $padding-lg $padding-xl;
-  position: sticky;
-  top: 0;
   z-index: 3000;
   nav {
+    height: 47px;
     background: $neutral-1;
     display: inline-block;
     border-radius: $border-radius-base;
     padding: $padding-xxs 0;
 
-
     .nav-item {
+      height: 100%;
       position: relative;
       display: inline-block;
-      padding: $padding-xs;
+      padding: $padding-xs $padding-sm;
       text-decoration: none;
       color: $text-color;
       border-radius: $border-radius-base;
-      margin: 0 $margin-xxs ;
+      margin: 0 $margin-xxs;
       &.active {
         background: $primary-base;
         color: $neutral-1;
@@ -29,23 +27,12 @@
   }
   #user-section {
     gap: $padding-xs;
+    height: 47px;
     div {
+      height: 100%;
       background: $neutral-1;
       padding: $padding-xxs;
       border-radius: $border-radius-base;
-
-      img {
-        border-radius: $border-radius-base;
-      }
-      .logout {
-        color: $text-color;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        aspect-ratio: 1/1;
-      }
     }
   }
   .cshadow {

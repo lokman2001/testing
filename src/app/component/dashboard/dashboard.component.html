@@ -15,13 +15,7 @@
             </p>
           </div>
           <div class="col-lg-4 d-flex align-items-end">
-            <img
-              nz-image
-              nzSrc="../../../assets/dashboardPhoto.png"
-              alt=""
-              width="100%"
-              class=""
-            />
+            <img nz-image nzSrc="../../../assets/dashboardPhoto.png" alt="" width="100%" class="" />
           </div>
         </div>
       </app-card>
@@ -30,26 +24,20 @@
       <section id="birthdays" class="col-lg-6">
         <app-card height="350px">
           <div header class="d-flex justify-content-between align-items-center">
-            <p class="m-1 fs-5" nz-typography>Birthdays</p>
+            <p class="m-1" nz-typography>Birthdays</p>
             <div class="d-flex align-items-start text-secondary">
-              <i class="fi fi-rr-calendar-day fs-6" ></i>
+              <i class="fi fi-rr-calendar-day fs-6"></i>
               <small class="ms-1"> December 2025 </small>
             </div>
           </div>
           <app-list-wrapper body height="90%" overflow="auto">
             <div class="ps-4 pe-2">
-              <p nz-typography class="my-1">Today</p>
-              <app-birthday-list
-                *ngFor="let user of users | dateSort : 'today'"
-                [data]="user"
-              ></app-birthday-list>
+              <small nz-typography class="my-1">Today</small>
+              <app-birthday-list *ngFor="let user of users | dateSort : 'today'" [data]="user"></app-birthday-list>
             </div>
             <div class="ps-4 pe-2">
-              <p nz-typography class="my-1">This Month</p>
-              <app-birthday-list
-                *ngFor="let user of users | dateSort : 'thisMonth'"
-                [data]="user"
-              ></app-birthday-list>
+              <small nz-typography class="my-1">This Month</small>
+              <app-birthday-list *ngFor="let user of users | dateSort : 'thisMonth'" [data]="user"></app-birthday-list>
             </div>
           </app-list-wrapper>
         </app-card>
@@ -57,23 +45,16 @@
       <section id="holidays" class="col-lg-6">
         <app-card height="350px">
           <div header class="d-flex justify-content-between">
-            <p class="m-1 fs-5" nz-typography>2025 Public Holidays</p>
+            <p class="m-1" nz-typography>2025 Public Holidays</p>
           </div>
           <app-list-wrapper body height="90%" overflow="auto">
             <div class="sticky-top px-4 pb-1 bg-white">
-              <nz-tag
-                role="button"
-                *ngFor="let c of country"
-                [nzColor]="c.active ? 'red' : 'default'"
-                (click)="filterClick(c.key)"
-                >{{ c.key }}</nz-tag
-              >
+              <nz-tag role="button" *ngFor="let c of country" [nzColor]="c.active ? 'red' : 'default'"
+                (click)="filterClick(c.key)">{{ c.key }}</nz-tag>
             </div>
             <div class="ps-4 pe-2">
-              <app-holiday-list
-                *ngFor="let holiday of holidays | holidayFilter : filterKey"
-                [holiday]="holiday"
-              ></app-holiday-list>
+              <app-holiday-list *ngFor="let holiday of holidays | holidayFilter : filterKey"
+                [holiday]="holiday"></app-holiday-list>
             </div>
           </app-list-wrapper>
         </app-card>
@@ -83,7 +64,7 @@
   <section id="todo" class="col-lg-4 col-sm-12 h">
     <app-card height="650px">
       <div class="d-flex justify-content-between align-items-center" header>
-        <p class="m-1 fs-5" nz-typography>To Do List</p>
+        <p class="m-1" nz-typography>To Do List</p>
         <div class="d-flex align-items-start text-secondary">
           <i class="fi fi-rr-calendar-day fs-6"></i>
           <small nz-typography class="border-end px-2"> December 2025 </small>
@@ -92,14 +73,9 @@
       </div>
       <app-list-wrapper body height="95%" overflow="auto">
         <div class="px-4">
-          <app-todo-list
-            *ngFor="let list of todoList"
-            [list]="list"
-          ></app-todo-list>
+          <app-todo-list *ngFor="let list of todoList" [list]="list"></app-todo-list>
         </div>
       </app-list-wrapper>
     </app-card>
   </section>
 </div>
-
-
