@@ -1,9 +1,10 @@
 <div class="list-item">
+  
   <div class="list-photo-text">
-    <img nz-image [nzSrc]="data.imgSrc" alt="" width="48px" height="48px" />
+    <img nz-image nzSrc="../../../../assets/user-foto/{{data.img}}.jpg" alt="" width="48px" height="48px" />
   <div>
-    <h5 nz-typography>{{ data.name }}</h5>
-    <span nz-typography>{{ data.role }}</span>
+    <p nz-typography>{{ data.name }}</p>
+    <small nz-typography nzType="secondary">{{ data.role }}</small>
   </div>
   </div>
   <div>

@@ -14,6 +14,8 @@ import { NzImageModule } from 'ng-zorro-antd/image'
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag'
 import { NzCardModule }from 'ng-zorro-antd/card'
+import { NzAvatarModule } from 'ng-zorro-antd/avatar'
+import { NzEmptyModule } from 'ng-zorro-antd/empty'
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -31,13 +33,17 @@ import { CardComponent } from './component/component/card/card.component';
 import { HeaderComponent } from './component/component/header/header.component';
 import { ListWrapperComponent } from './component/component/list-wrapper/list-wrapper.component';
 import { ContainerComponent } from './component/component/container/container.component';
+import { MainComponent } from './main/main.component';
+import { HolidayFilterPipe } from './pipe/holiday-filter/holiday-filter.pipe';
+import { DateSortPipe } from './pipe/date-sort/date-sort.pipe';
+import { DropDownMenuComponent } from './component/component/drop-down-menu/drop-down-menu.component';
 
 
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [ AppComponent, LoginComponent, DashboardComponent, MenubarComponent, BirthdayListComponent, HolidayListComponent, TodoListComponent, CardComponent, HeaderComponent, ListWrapperComponent, ContainerComponent, ],
+  declarations: [ AppComponent, LoginComponent, DashboardComponent, MenubarComponent, BirthdayListComponent, HolidayListComponent, TodoListComponent, CardComponent, HeaderComponent, ListWrapperComponent, ContainerComponent, MainComponent, HolidayFilterPipe, DateSortPipe, DropDownMenuComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -53,6 +59,8 @@ registerLocaleData(en);
     NzTagModule,
     NzCardModule,
     NzImageModule,
+    NzAvatarModule,
+    NzEmptyModule,
     NgbModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

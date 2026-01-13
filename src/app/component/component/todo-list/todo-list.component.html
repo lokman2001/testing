@@ -1,3 +1,3 @@
 <div class="list-container" [class.is-done]="list.done">
-    <label nz-checkbox [(ngModel)]="list.done"><h6 nz-typography class="p-0" [class.done]="list.done">{{list.task_name}}</h6> <small nz-typography>{{list.start_date}}</small></label>
+    <label nz-checkbox [(ngModel)]="list.done"><p nz-typography class="m-0" [class.done]="list.done">{{list.task_name}}</p> <small nz-typography nzType="secondary">{{list.start_date}}</small></label>
 </div>          

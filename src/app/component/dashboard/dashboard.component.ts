@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HolidayFilterPipe } from 'src/app/pipe/holiday-filter/holiday-filter.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,24 @@ export class DashboardComponent implements OnInit {
     'Steamline Your workplace with our Office Management System -a powerfull, all-in-one platform desiged to simplify daily Operations,Enhance productivity,and keep your organization running smoothly.',
     "Let'stransform your workspace with technology.",
   ];
-  public country = ['All', 'Singapore', 'Myanmar', 'Thailand'];
+  public country = [
+    { key: 'All', active: true },
+    { key: 'Singapore', active: false },
+    { key: 'Myanmar', active: false },
+    { key: 'Thailand', active: false },
+  ];
+  public filterKey: string = 'All';
+  public filterClick(key:string){
+    this.country.map((data,index)=> {
+      if(data.key !== key ){
+        data.active = false
+      }else{
+        data.active = true
+        this.filterKey = data.key
+      }
+    })
+  }
+
   public holidays = [
     {
       holiday_name: "New Year's Day",
@@ -64,48 +82,56 @@ export class DashboardComponent implements OnInit {
       country: 'Singapore',
     },
   ];
+  public TempHolidays: any[] = [];
   public users = [
     {
       id: 1,
       name: 'Alex Thompson',
-      birthday: '1992-05-14',
+      birthday: '1992-01-13',
       role: 'Administrator',
+      img: 'avatar1',
     },
     {
       id: 2,
       name: 'Sarah Chen',
-      birthday: '1988-11-23',
+      birthday: '1988-01-23',
       role: 'Project Manager',
+      img: 'avatar2',
     },
     {
       id: 3,
       name: 'Marcus Rodriguez',
       birthday: '1995-02-08',
       role: 'Lead Developer',
+      img: 'avatar3',
     },
     {
       id: 4,
       name: 'Jordan Smith',
       birthday: '2000-07-19',
       role: 'UI/UX Designer',
+      img: 'avatar4',
     },
     {
       id: 5,
       name: 'Elena Petrova',
-      birthday: '1991-12-30',
+      birthday: '1991-01-30',
       role: 'Quality Assurance',
+      img: 'avatar5',
     },
     {
       id: 6,
       name: 'David Kwong',
       birthday: '1985-04-03',
       role: 'DevOps Engineer',
+      img: 'avatar1',
     },
     {
       id: 7,
       name: 'Maya Patel',
       birthday: '1997-09-12',
       role: 'Data Analyst',
+      img: 'avatar2',
     },
   ];
   public todoList = [

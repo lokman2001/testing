@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  public dropbox : boolean = false
+  public dropboxClick (){
+    this.dropbox = !this.dropbox
+  }
   constructor() { }
 
   ngOnInit(): void {

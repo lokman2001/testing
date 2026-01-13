@@ -2,8 +2,7 @@
 /* Load specific weights you need */
 @import "@fontsource/poppins/300.css";
 @import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/500.css";
-@import "@fontsource/poppins/700.css";
+// @import "@fontsource/poppins/500.css";
 
 @import "~bootstrap/scss/bootstrap";
 @import "~@flaticon/flaticon-uicons/css/all/all";
@@ -14,6 +13,11 @@
   font-family: "Poppins";
   font-weight: 400;
 }
+p {
+  font-weight: 400;
+}
+
 main {
-  padding: 0 $padding-xl;
+  background: $neutral-3;
+  padding: 0 $padding-lg;
 }

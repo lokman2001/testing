@@ -6,16 +6,56 @@
   </section>
   <div class="">
     <nav class="cshadow">
-      <a routerLink="../dashboard" class="nav-item" routerLinkActive="active"
+      <a
+        nz-button
+        nzType="text"
+        routerLink="../dashboard"
+        class="nav-item"
+        routerLinkActive="active"
         >Dashboard</a
-      ><a routerLink="../profile" class="nav-item" routerLinkActive="active"
-        >Profile</a
       ><a
+        nz-button
+        nzType="text"
+        class="nav-item"
+        routerLinkActive="active"
+        (click)="dropboxClick()"
+        >Profile
+
+        <app-drop-down-menu [isOpen]="dropbox">
+          <div header>
+            <p nz-typography>Profile</p>
+          </div>
+          <div body>
+            <span class="d-flex align-items-center mb-2">
+              <button nz-button nzType="default" nzSize="large">
+                <i class="fi fi-rr-users"></i>
+              </button>
+              <div class="lh-1 mx-3">
+                <p class="m-0" nz-typography>Customer</p>
+                <small class="" nz-typography>Customer Setting</small>
+              </div>
+            </span>
+            <span class="d-flex align-items-center">
+              <button nz-button nzType="default" nzSize="large">
+                <i class="fi fi-rr-user-gear"></i>
+              </button>
+              <div class="lh-1 mx-3">
+                <p class="m-0" nz-typography>Role</p>
+                <small class="" nz-typography>Role Setting</small>
+              </div>
+            </span>
+          </div>
+        </app-drop-down-menu> </a
+      ><a
+        nz-button
+        nzType="text"
         routerLink="../general_setting"
         class="nav-item"
         routerLinkActive="active"
         >General Setting</a
       ><a
+        nz-button
+        nzType="text"
         routerLink="../user_activity"
         class="nav-item"
         routerLinkActive="active"
@@ -24,22 +64,22 @@
     </nav>
   </div>
   <section id="user-section" class="d-flex">
-    <div class="d-flex  cshadow">
-      <img
-        nz-image
-        width="36px"
-        height="36px"
-        nzSrc="../../../../assets/user-foto/avatar=avator-2.jpg"
-        alt=""
-      />
+    <div class="d-flex cshadow">
+      <nz-avatar
+        nzIcon="user"
+        nzShape="square"
+        [nzSize]="38"
+        nzSrc="../../../../assets/user-foto/avatar1.jpg"
+      ></nz-avatar>
+      <img src="" alt="" />
       <div class="d-flex">
         <span class="ps-1">Alex Thompson</span>
         <span class="ps-1">(Manager)</span>
       </div>
     </div>
-    <div class="cshadow  ">
-        <a class="logout" href=""><i class="fi fi-rr-sign-out-alt"></i></a>
-        
-    </div>
+
+    <button class="" routerLink="login" nz-button nzType="text"
+      ><i class="fi fi-rr-sign-out-alt"></i
+    ></button>
   </section>
 </header>
