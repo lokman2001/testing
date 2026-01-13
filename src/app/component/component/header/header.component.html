@@ -63,8 +63,8 @@
       >
     </nav>
   </div>
-  <section id="user-section" class="d-flex">
-    <div class="d-flex cshadow">
+  <section id="user-section" class="d-flex align-items-center">
+    <div class="d-flex cshadow align-items-center">
       <nz-avatar
         nzIcon="user"
         nzShape="square"
@@ -77,9 +77,11 @@
         <span class="ps-1">(Manager)</span>
       </div>
     </div>
-
-    <button class="" routerLink="login" nz-button nzType="text"
+    <div class="cshadow p-1">
+       <button class="" routerLink="login" nz-button nzType="text" nzSize="large"
       ><i class="fi fi-rr-sign-out-alt"></i
     ></button>
+    </div>
+   
   </section>
 </header>
