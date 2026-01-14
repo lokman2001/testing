@@ -1,1 +1,43 @@
-<p>customer-list works!</p>
+<div>
+  <app-card>
+    <div header class="">
+      <div>
+        <div class="d-flex justify-content-between">
+          <h5 nz-typography>Customer</h5>
+          <button
+            nz-button
+            nzType="primary"
+            class="float-right"
+            nzSize="default"
+            routerLink="../create"
+          >
+            <i class="fi fi-rr-add pe-1"></i>Create
+          </button>
+        </div>
+        <p nz-typography>
+          Easily add new customer profiles by entering essential contact and
+          perfercence details.
+        </p>
+      </div>
+      <div class="col-3">
+        <label for="search">All Search</label>
+        <input nz-input placeholder="Search" id="search" />
+      </div>
+      <div>
+        <nz-table #headerTable [nzPageSize]="50" [nzScroll]="{ y: '240px' }">
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Inital Name</th>
+              <th>Phone Number</th>
+              <th>Fax Number</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </nz-table>
+      </div>
+    </div>
+  </app-card>
+</div>

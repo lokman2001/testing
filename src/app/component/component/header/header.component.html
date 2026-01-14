@@ -1,4 +1,4 @@
-<header class="header-container d-flex align-items-center justify-content-between px-5 py-3">
+<header class="header-container d-flex align-items-center justify-content-between px-5 py-3 sticky-top">
   <section id="Logo" class="">
     <img nz-image nzSrc="../../../../assets/Logo.svg" />
   </section>
@@ -15,7 +15,7 @@
           </div>
           <div body>
             <span class="d-flex align-items-center mb-2">
-              <a nz-button nzType="default" routerLink="../customer" nzSize="large">
+              <a nz-button nzType="default" routerLink="../customer/list" nzSize="large">
                 <i class="fi fi-rr-users"></i>
               </a>
               <div class="lh-1 mx-3">
@@ -45,7 +45,7 @@
     <div class="d-flex cshadow align-items-center">
       <nz-avatar nzIcon="user" nzShape="square" [nzSize]="38"
         nzSrc="../../../../assets/user-foto/avatar1.jpg"></nz-avatar>
-      <p class="m-0 ms-">Alex Thompson</p>
+      <p class="m-0 ms-1">Alex Thompson</p>
       <p class="m-0 ms-1">(Manager)</p>
     </div>
     <div class="cshadow p-1">
