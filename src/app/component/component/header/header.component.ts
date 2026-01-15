@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
   public dropbox : boolean = false
   public dropboxClick (){
     this.dropbox = !this.dropbox
+    console.log(this.dropbox)
   }
   constructor() { }
 

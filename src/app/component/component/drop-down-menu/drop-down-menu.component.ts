@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./drop-down-menu.component.scss']
 })
 export class DropDownMenuComponent implements OnInit {
-  @Input() public isOpen : boolean =false
+  @Input() public isOpen : boolean =true
   constructor() { }
 
   ngOnInit(): void {

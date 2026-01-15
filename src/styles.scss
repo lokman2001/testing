@@ -2,7 +2,8 @@
 /* Load specific weights you need */
 @import "@fontsource/poppins/300.css";
 @import "@fontsource/poppins/400.css";
-// @import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/500.css";
+
 
 @import "~bootstrap/scss/bootstrap";
 @import "~@flaticon/flaticon-uicons/css/all/all";
@@ -17,7 +18,54 @@ p {
   font-weight: 400;
 }
 
-main {
+body{
   background: $neutral-3;
-  padding: 0 $padding-lg;
+}
+// style Dic
+.text-secondary{
+  color: $text-color-secondary;
+}
+h1,h2,h3,h4,h5,h6,p{
+  font-weight: 500;
+  margin: 0;
+}
+thead{
+  background: $background-color-light;
+}
+a{
+  text-decoration: none;
+}
+.square{
+  width: 50px !important;
+  aspect-ratio: 1/1;
+}
+
+//custom style change 
+.ant-pagination-item-active{
+  background: $primary-color-active;
+
+}
+.ant-pagination-item a{
+  text-decoration: none;
+  color: $neutral-1;
+}
+.ant-pagination-item a  :hover{
+  text-decoration: none;
+  color: $neutral-1;
+}
+.ant-pagination-item-active a{
+  text-decoration: none;
+  color: $neutral-1;
+}
+.ant-table-pagination{
+  display: block;
+  text-align: end;
+  
+}
+
+.ant-pagination-total-text {
+  float: left;
+}
+.ant-pagination-prev, .ant-pagination-next{
+  text-align: center;
 }

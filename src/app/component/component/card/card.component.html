@@ -1,10 +1,5 @@
-<div class="card-container">
-
-    <div class="inner-card" [style.height]="height">
-        <div class="header">
-            <ng-content class="" select="[header]"></ng-content>
-        </div>
-        <ng-content select="[body]"></ng-content>
+<div class="card-container" [style.height]="height">
+    <div>
+        <ng-content></ng-content>
     </div>
-
 </div>

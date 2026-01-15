@@ -1,19 +1,20 @@
 @import "../../../../tokens/build/scss/variables";
-.drop-down-menu {
-  display: none;
+.dropDown{
+
   visibility: hidden;
+  display: none;
   position: absolute;
-  left: 50%;
-  bottom: 0%;
-    text-align: left;
-  transform: translateY(109%) translateX(-50%);
-  background: $neutral-1;
-  padding: $padding-md;
+  background-color: $neutral-1;
+  padding: $padding-sm;
   border-radius: $border-radius-base;
-  -webkit-box-shadow: 0px 5px 10px -2px #878787;
-  box-shadow: 0px 3px 10px -2px #878787;
+  box-shadow: 0px 1px 10px 1px $neutral-5;
+  margin-top: $margin-xxs;
+  text-align: start;
+  flex-direction: column;
+  gap: $padding-sm;
+
   &.is-open{
-    display: inline-block;
     visibility: visible;
+    display: flex;
   }
 }

@@ -1,55 +1,87 @@
-<header class="header-container d-flex align-items-center justify-content-between px-5 py-3 sticky-top">
+<header
+  class="header-container d-flex align-items-center justify-content-between px-5 py-3 sticky-top"
+>
   <section id="Logo" class="">
     <img nz-image nzSrc="../../../../assets/Logo.svg" />
   </section>
   <section class="">
-    <nav class="cshadow">
-      <a nz-button nzType="text" routerLink="../dashboard" class="nav-item" nzSize="large"
-        routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="text" class="nav-item" routerLinkActive="active" nzSize="large"
-        (click)="dropboxClick()">Profile
+    <nav class="shadow-sm">
+      <a
+        nz-button
+        nzType="text"
+        routerLink="../dashboard"
+        class="nav-item"
+        nzSize="large"
+        routerLinkActive="active"
+        >Dashboard</a
+      >
+      <a
+        nz-button
+        nzType="text"
+        class="nav-item"
+        routerLinkActive="active"
+        nzSize="large"
+        (click)="dropboxClick()"
+        >Profile
 
         <app-drop-down-menu [isOpen]="dropbox">
           <div header>
             <p class="lh-sm" nz-typography>Profile</p>
           </div>
           <div body>
-            <span class="d-flex align-items-center mb-2">
-              <a nz-button nzType="default" routerLink="../customer/list" nzSize="large">
-                <i class="fi fi-rr-users"></i>
-              </a>
-              <div class="lh-1 mx-3">
-                <p class="m-0" nz-typography>Customer</p>
-                <small class="" nz-typography>Customer Setting</small>
-              </div>
-            </span>
-            <span class="d-flex align-items-center">
-              <button nz-button nzType="default" nzSize="large">
-                <i class="fi fi-rr-user-gear"></i>
-              </button>
-              <div class="lh-1 mx-3">
-                <p class="m-0" nz-typography>Role</p>
-                <small class="" nz-typography>Role Setting</small>
-              </div>
-            </span>
+            <app-menu-item
+              title="Customer"
+              description="Customer Setting"
+              icon="fi fi-rr-users"
+              link="../customer/list"
+            ></app-menu-item>
+            <app-menu-item
+              title="Role"
+              description="Role Setting"
+              icon="fi fi-rr-admin-alt"
+              link="../customer/list"
+            ></app-menu-item>
           </div>
         </app-drop-down-menu>
       </a>
-      <a nz-button nzType="text" nzSize="large" routerLink="../general_setting" class="nav-item"
-        routerLinkActive="active">General
-        Setting</a><a nz-button nzType="text" nzSize="large" routerLink="../user_activity" class="nav-item"
-        routerLinkActive="active">User Activity</a>
+      <a
+        nz-button
+        nzType="text"
+        nzSize="large"
+        routerLink="../general_setting"
+        class="nav-item"
+        routerLinkActive="active"
+        >General Setting</a
+      ><a
+        nz-button
+        nzType="text"
+        nzSize="large"
+        routerLink="../user_activity"
+        class="nav-item"
+        routerLinkActive="active"
+        >User Activity</a
+      >
     </nav>
   </section>
   <section id="user-section" class="d-flex align-items-center">
-    <div class="d-flex cshadow align-items-center">
-      <nz-avatar nzIcon="user" nzShape="square" [nzSize]="38"
-        nzSrc="../../../../assets/user-foto/avatar1.jpg"></nz-avatar>
+    <div class="d-flex shadow-sm align-items-center">
+      <nz-avatar
+        nzIcon="user"
+        nzShape="square"
+        [nzSize]="38"
+        nzSrc="../../../../assets/user-foto/avatar1.jpg"
+      ></nz-avatar>
       <p class="m-0 ms-1">Alex Thompson</p>
       <p class="m-0 ms-1">(Manager)</p>
     </div>
-    <div class="cshadow p-1">
-      <button class="" routerLink="login" nz-button nzType="text" nzSize="large">
+    <div class="shadow-sm p-1">
+      <button
+        class=""
+        routerLink="login"
+        nz-button
+        nzType="text"
+        nzSize="large"
+      >
         <i class="fi fi-rr-sign-out-alt"></i>
       </button>
     </div>
