@@ -4,9 +4,8 @@
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 
-
-@import "~bootstrap/scss/bootstrap";
-@import "~@flaticon/flaticon-uicons/css/all/all";
+@import "bootstrap/scss/bootstrap";
+@import "@flaticon/flaticon-uicons/css/all/all";
 @import "./tokens/build/scss/variables";
 
 * {
@@ -18,54 +17,92 @@ p {
   font-weight: 400;
 }
 
-body{
+body {
   background: $neutral-3;
 }
 // style Dic
-.text-secondary{
+.text-secondary {
   color: $text-color-secondary;
 }
-h1,h2,h3,h4,h5,h6,p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-weight: 500;
   margin: 0;
 }
-thead{
+thead {
   background: $background-color-light;
+  th {
+    font-size: medium;
+  }
 }
-a{
+a {
   text-decoration: none;
 }
-.square{
+.square {
   width: 50px !important;
   aspect-ratio: 1/1;
 }
 
-//custom style change 
-.ant-pagination-item-active{
-  background: $primary-color-active;
+// Card Style For Card Content
+.card-style {
+  padding: 0 $padding-lg;
 
+  // optional class to add the padding
+  &.card-pxy {
+    padding: $padding-lg;
+  }
+  &.card-pXonly {
+    padding: 0 $padding-lg;
+  }
+  &.card-pYonly {
+    padding: $padding-lg 0;
+  }
+  // If you want sticky header & scroll you can use this class
+  .card-fixed-header {
+    background: $neutral-1;
+    padding-top: $padding-lg;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    // if need left and right header use this
+    &.flex-justify-between {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
-.ant-pagination-item a{
+//custom style change
+.ant-pagination-item-active {
+  background: $primary-color-active;
+}
+.ant-pagination-item a {
   text-decoration: none;
   color: $neutral-1;
 }
-.ant-pagination-item a  :hover{
+.ant-pagination-item a :hover {
   text-decoration: none;
   color: $neutral-1;
 }
-.ant-pagination-item-active a{
+.ant-pagination-item-active a {
   text-decoration: none;
   color: $neutral-1;
 }
-.ant-table-pagination{
+.ant-table-pagination {
   display: block;
   text-align: end;
-  
 }
 
 .ant-pagination-total-text {
   float: left;
 }
-.ant-pagination-prev, .ant-pagination-next{
+.ant-pagination-prev,
+.ant-pagination-next {
   text-align: center;
 }

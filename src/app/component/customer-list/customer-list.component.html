@@ -1,16 +1,10 @@
 <div>
   <app-card>
-    <div  class="">
+    <div class="card-style card-pxy">
       <div>
-        <div class="d-flex justify-content-between">
+        <div class=" d-flex justify-content-between">
           <h5 nz-typography>Customer</h5>
-          <button
-            nz-button
-            nzType="primary"
-            class=""
-            nzSize="default"
-            routerLink="../create"
-          >
+          <button nz-button nzType="primary" class="" nzSize="default" routerLink="../create">
             <i class="fi fi-rr-add pe-1"></i>Create
           </button>
         </div>
@@ -24,15 +18,10 @@
         <input nz-input placeholder="Search" id="search" />
       </div>
       <div class="overflow-auto">
-        <nz-table
-          #Table  
-          [nzShowSizeChanger]="true"
-          [nzShowTotal]="range"
-          [nzData]="customerData"
-        >
+        <nz-table #Table [nzShowSizeChanger]="true" [nzShowTotal]="range" [nzData]="customerData">
           <thead>
             <tr>
-              <th nz-typograph >ustomer Name</th>
+              <th nz-typograph>Customer Name</th>
               <th nz-typography>Inital Name</th>
               <th nz-typography>Phone Number</th>
               <th nz-typography>Fax Number</th>
@@ -48,18 +37,17 @@
               <td>{{ customer.fax_number }}</td>
               <td>{{ customer.address }}</td>
               <td>
-                <i class="fi fi-rr-edit mx-1"></i
-                ><i class="fi fi-rr-trash mx-1"></i>
+                <i class="fi fi-rr-edit mx-1"></i><i class="fi fi-rr-trash mx-1"></i>
               </td>
             </tr>
           </tbody>
         </nz-table>
         <ng-template #range let-range="range" let-total class=" float-left">
-          
+
           <p nz-typography>
             Showing {{ range[0]}} to {{ range[1] }} of {{ total }} entries
           </p>
-          
+
         </ng-template>
       </div>
     </div>

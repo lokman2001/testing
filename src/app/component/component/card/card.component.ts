@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  @Input() public height = "auto"
+  @Input() public height = 'auto';
+  @Input() public scroll = 'hidden';
   constructor() {}
 
   ngOnInit(): void {}
