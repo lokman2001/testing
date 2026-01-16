@@ -5,6 +5,8 @@
   padding: $padding-md $padding-lg;
   z-index: 3000;
   display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   justify-content: space-between;
   align-items: center;
   position: sticky;
@@ -12,7 +14,8 @@
   nav {
     height: 47px;
     background: $neutral-1;
-    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
     border-radius: $border-radius-base;
     padding: $padding-xxs 0;
 
@@ -25,7 +28,6 @@
       color: $text-color;
       border-radius: $border-radius-base;
       margin: 0 $margin-xxs;
-
       .menu-item {
         display: flex;
         a {

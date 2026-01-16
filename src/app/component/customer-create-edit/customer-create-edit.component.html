@@ -1,86 +1,153 @@
 <div>
   <app-card>
-    <div header class="">
-      <div class="d-flex justify-content-between">
-        <form action="">
-          <h5 nz-typography>Customer Create / Edit</h5>
-          <div class="row">
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Customer Name</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Initial Name</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Phone Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Fax Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
+    <div class="card-style card-pxy">
+      <form action="">
+        <h5 nz-typography class="font-bold">Customer {{option}}</h5>
+        <div class="row">
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Customer Name</label
+            >
+            <input nz-input placeholder="Search" id="search" />
           </div>
-          <fieldset class="border rounded row position-relative m-0 my-3 p-3 ">
-            <span class="small position-absolute bg-white " style="top: 0; left: 15px; transform: translateY(-50%); width: fit-content;">Address</span>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Initial Name</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Phone Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Fax Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+        </div>
+        <fieldset class="row fieldset">
+          <span
+            class="small position-absolute bg-white"
+            style="
+              top: 0;
+              left: 15px;
+              transform: translateY(-50%);
+              width: fit-content;
+            "
+            >Address</span
+          >
 
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Country</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">City / State</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Postal Code</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6">
-              <label for="search" nz-typography class="fs-6">Unit Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Floor Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Street Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-          </fieldset>
-          <div class="row">
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Relationship SVP Level</label>
-              <nz-select nzPlaceHolder="Please Select" class="d-block">
-                <nz-option nzValue="Opt1" nzLabel="Option One"></nz-option>
-                <nz-option nzValue="lucy" nzLabel="Option Two"></nz-option>
-              </nz-select>
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Payment Terms</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">IBM Agreement Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">IBM Customer Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">IBM Site Number</label>
-              <input nz-input placeholder="Search" id="search" />
-            </div>
-            <div class="col-lg-6 pb-3">
-              <label for="search" nz-typography class="fs-6">Anniversary</label>
-              <nz-date-picker class="d-block"></nz-date-picker>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Country</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >City / State</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Postal Code</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Unit Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Floor Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Street Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Relationship SVP Level</label
+            >
+            <nz-select nzPlaceHolder="Please Select" class="d-block">
+              <nz-option nzValue="Opt1" nzLabel="Option One"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Option Two"></nz-option>
+            </nz-select>
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Payment Terms</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >IBM Agreement Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >IBM Customer Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >IBM Site Number</label
+            >
+            <input nz-input placeholder="Search" id="search" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <label for="search" nz-typography class="font-medium"
+              >Anniversary</label
+            >
+            <nz-date-picker class="d-block"></nz-date-picker>
+          </div>
+        </div>
+        <fieldset class="d-flex flex-column gap-4 fieldset">
+          <span
+            class="small position-absolute bg-white"
+            style="
+              top: 0;
+              left: 15px;
+              transform: translateY(-50%);
+              width: fit-content;
+            "
+            >Contact Person</span
+          >
+          <div>
+            <button nzType="primary" nz-button>
+              <i class="fi fi-rr-add p-1"></i>Add Contact Person
+            </button>
+          </div>
+          <div class="row g-2 align-items-stretch">
+            <div class="col-lg-4" *ngFor="let contact of contacts">
+              <app-contact-person-card
+                [contact]="contact"
+              ></app-contact-person-card>
             </div>
           </div>
-        </form>
-      </div>
+        </fieldset>
+        <div class="d-flex justify-content-end gap-2">
+          <button nz-button nzType="default" routerLink="../list">Cancel</button>
+          <button nz-button nzType="primary" routerLink="../list">Create</button>
+        </div>
+      </form>
     </div>
   </app-card>
 </div>

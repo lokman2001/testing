@@ -1,0 +1,14 @@
+<div class="person-card">
+  <div class="texts">
+    <p class="font-bold" nz-typography>
+      {{ contact.name }}<i class="fi fi-sr-star px-1" *ngIf="contact.important"></i>
+    </p>
+
+    <p class="small">{{ contact.email }}</p>
+    <p class="small">{{ contact.phone }}</p>
+  </div>
+  <div class="actions">
+    <div class="col-lg-6"><i class="fi fi-rr-edit"></i></div>
+    <div class="col-lg-6"><i class="fi fi-rr-trash"></i></div>
+  </div>
+</div>

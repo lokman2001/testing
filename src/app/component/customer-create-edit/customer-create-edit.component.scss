@@ -1,0 +1,12 @@
+@import "../../../tokens/build/scss/variables";
+
+form{
+    .fieldset{
+        position: relative;
+        border: $border-color-base $border-style-base $border-width-base ;
+        border-radius: $border-radius-base;
+        padding: $padding-lg;
+        margin: $padding-md 0;
+    }
+
+}

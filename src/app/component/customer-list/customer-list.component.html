@@ -8,43 +8,44 @@
             <i class="fi fi-rr-add pe-1"></i>Create
           </button>
         </div>
-        <p nz-typography class="text-secondary mb-2">
+        <p nz-typography class="text-secondary font-medium mb-2">
           Easily add new customer profiles by entering essential contact and
           perfercence details.
         </p>
       </div>
-      <div class="col-3 pb-4">
+      <div class="col-lg-3 pb-4">
         <label for="search">All Search</label>
         <input nz-input placeholder="Search" id="search" />
       </div>
       <div class="overflow-auto">
-        <nz-table #Table [nzShowSizeChanger]="true" [nzShowTotal]="range" [nzData]="customerData">
-          <thead>
+        <nz-table #Table [nzShowSizeChanger]="true" [nzShowTotal]="range" [nzData]="customerData" >
+          <thead >
             <tr>
-              <th nz-typograph>Customer Name</th>
-              <th nz-typography>Inital Name</th>
-              <th nz-typography>Phone Number</th>
-              <th nz-typography>Fax Number</th>
-              <th nz-typography>Address</th>
-              <th nz-typography>Action</th>
+              <th [nzSortFn]="sortCustomerNameFn">Customer Name</th>
+              <th [nzSortFn]="sortInitialNameFn">Inital Name</th>
+              <th [nzSortFn]="sortPhoneFn">Phone Number</th>
+              <th [nzSortFn]="sortFaxFn">Fax Number</th>
+              <th [nzSortFn]="sortAddressFn">Address</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let customer of Table.data">
+            <tr *ngFor="let customer of Table.data ">
               <td>{{ customer.customer_name }}</td>
               <td>{{ customer.initial_name }}</td>
               <td>{{ customer.phone }}</td>
               <td>{{ customer.fax_number }}</td>
               <td>{{ customer.address }}</td>
               <td>
-                <i class="fi fi-rr-edit mx-1"></i><i class="fi fi-rr-trash mx-1"></i>
+                <i routerLink="../edit" class="fi fi-rr-edit mx-1"></i><i class="fi fi-rr-trash mx-1"></i>
               </td>
             </tr>
           </tbody>
         </nz-table>
+        
         <ng-template #range let-range="range" let-total class=" float-left">
 
-          <p nz-typography>
+          <p nz-typography class="font-bold">
             Showing {{ range[0]}} to {{ range[1] }} of {{ total }} entries
           </p>
 

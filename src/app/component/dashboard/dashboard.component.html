@@ -3,12 +3,12 @@
     <section id="introduction" class="">
       <app-card>
         <div class="row card-style card-pxy">
-          <h4 nz-typography class=" col-12">
+          <h4 nz-typography class="col-12 font-bold">
             Smart, efficent Office management to streamline tasks and boost
             workplace productivity.
           </h4>
 
-          <div class="col-lg-7 d-flex flex-column gap-2">
+          <div class="col-lg-7 d-flex flex-column justify-content-center gap-3">
             <p nz-typography *ngFor=" let p of introParagraphs">
               {{ p }}
             </p>
@@ -25,14 +25,14 @@
         <app-card height="320px" scroll="auto">
           <div class=" card-style">
             <div class="card-fixed-header flex-justify-between">
-              <h6 nz-typography>Birthdays</h6>
+              <h6 nz-typography class="font-bold">Birthdays</h6>
               <div>
-                <i class="fi fi-rr-calendar-day"></i>
-                <small> December 2025 </small>
+                <i class="fi fi-rr-calendar-day secondary-text"></i>
+                <small class="secondary-text px-1" nz-typography>December 2025 </small>
               </div>
             </div>
             <app-list-wrapper>
-              <h6 nz-typography>Today</h6>
+              <p nz-typography class="font-medium">Today</p>
               <app-birthday-list *ngFor="let user of users" [data]="user"></app-birthday-list>
             </app-list-wrapper>
           </div>
@@ -42,8 +42,8 @@
         <app-card height="320px" scroll="auto">
           <div class="card-style">
             <div class="card-fixed-header">
-              <h6 nz-typography>2025 Public Holidays</h6>
-              <nz-tag role=" button" *ngFor="let c of country" [nzColor]="c.active ? 'red' : 'default'"
+              <h6 nz-typography class="font-bold">2025 Public Holidays</h6>
+              <nz-tag role="button" *ngFor="let c of country" [nzColor]="c.active ? 'red' : 'default'"
                 (click)="filterClick(c.key)">{{ c.key }}</nz-tag>
             </div>
             <app-list-wrapper>
@@ -56,15 +56,15 @@
       </section>
     </div>
   </section>
-  <section class="col-4 vh-100" id="todo">
+  <section class="col-lg-4 vh-100" id="todo">
     <app-card height="650px" scroll="auto">
       <div class="card-style">
         <div class="card-fixed-header flex-justify-between">
-          <h6 nz-typography>To Do List</h6>
+          <h6 nz-typography class="font-bold">To Do List</h6>
           <div>
-            <i class=" fi fi-rr-calendar-day"></i>
-            <small nz-typography> December 2025 </small>
-            <i class="fi fi-rr-up-right-from-square px-1"></i>
+            <i class=" fi fi-rr-calendar-day secondary-text"></i>
+            <small nz-typography nzType="secondary"> December 2025 </small>
+            <i class="fi fi-rr-up-right-from-square secondary-text px-1"></i>
           </div>
         </div>
         <app-list-wrapper>

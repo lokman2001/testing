@@ -1,0 +1,27 @@
+@import "../../../../tokens/build/scss/variables";
+.person-card {
+    height: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
+  border: $border-width-base $border-color-base $border-style-base;
+  border-radius: $border-radius-base;
+  .texts {
+    text-align: center;
+    padding: $padding-lg;
+    i{
+        color: $gold-6;
+    }
+    div{
+        padding: $padding-sm;
+    }
+  }
+  .actions {
+    display: flex;
+    background-color: $neutral-3;
+    text-align: center;
+    div {
+      padding: $padding-xxs;
+      border: $border-width-base $border-color-base $border-style-base;
+    }
+  }
+}

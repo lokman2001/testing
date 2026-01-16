@@ -4,8 +4,8 @@
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 
-@import "bootstrap/scss/bootstrap";
-@import "@flaticon/flaticon-uicons/css/all/all";
+@import "~bootstrap/scss/bootstrap";
+@import "~@flaticon/flaticon-uicons/css/all/all";
 @import "./tokens/build/scss/variables";
 
 * {
@@ -24,21 +24,37 @@ body {
 .text-secondary {
   color: $text-color-secondary;
 }
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
-  font-weight: 500;
+small,
+i,
+label {
+  font-weight: 300;
+  &.secondary-text {
+    color: $text-color-secondary;
+  }
+  &.font-medium {
+    font-weight: 400;
+  }
+  &.font-bold {
+    font-weight: 500;
+  }
+}
+p,
+label {
+  font-size: $text-size-base;
+  padding: 0;
   margin: 0;
 }
-thead {
-  background: $background-color-light;
-  th {
-    font-size: medium;
-  }
+
+.small
+{
+  font-size: $text-size-sm;
 }
 a {
   text-decoration: none;
@@ -56,16 +72,26 @@ a {
   &.card-pxy {
     padding: $padding-lg;
   }
+  .card-pxy {
+    padding: $padding-lg;
+  }
   &.card-pXonly {
     padding: 0 $padding-lg;
   }
+  .card-pXonly {
+    padding: 0 $padding-lg;
+  }
   &.card-pYonly {
+    padding: $padding-lg 0;
+  }
+  .card-pYonly {
     padding: $padding-lg 0;
   }
   // If you want sticky header & scroll you can use this class
   .card-fixed-header {
     background: $neutral-1;
     padding-top: $padding-lg;
+    padding-bottom: $padding-sm;
     position: sticky;
     top: 0;
     right: 0;
@@ -78,7 +104,27 @@ a {
     }
   }
 }
+
+// table style
+table {
+  thead {
+    background: $background-color-light;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  tbody {
+    font-weight: 300;
+    white-space: nowrap;
+  }
+}
 //custom style change
+
+.ant-table-column-title
+{
+      background: $background-color-light;
+    font-weight: 400;
+}
+ 
 .ant-pagination-item-active {
   background: $primary-color-active;
 }

@@ -43,6 +43,7 @@ import { DropDownMenuComponent } from './component/component/drop-down-menu/drop
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
 import { CustomerCreateEditComponent } from './component/customer-create-edit/customer-create-edit.component';
 import { MenuItemComponent } from './component/component/menu-item/menu-item.component';
+import { ContactPersonCardComponent } from './component/component/contact-person-card/contact-person-card.component';
 
 registerLocaleData(en);
 
@@ -66,6 +67,7 @@ registerLocaleData(en);
     CustomerListComponent,
     CustomerCreateEditComponent,
     MenuItemComponent,
+    ContactPersonCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,9 @@
   visibility: hidden;
   display: none;
   position: absolute;
+  top: 110%;
+  right: 50%;
+  transform: translateX(50%);
   background-color: $neutral-1;
   padding: $padding-sm;
   border-radius: $border-radius-base;
