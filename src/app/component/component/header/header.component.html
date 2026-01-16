@@ -24,21 +24,27 @@
 
         <app-drop-down-menu [isOpen]="dropbox">
           <div header>
-            <p class="lh-sm" nz-typography>Profile</p>
+            <p class="lh-sm font-bold" nz-typography>Profile</p>
           </div>
           <div body>
-            <app-menu-item
-              title="Customer"
-              description="Customer Setting"
-              icon="fi fi-rr-users"
-              link="../customer/list"
-            ></app-menu-item>
-            <app-menu-item
-              title="Role"
-              description="Role Setting"
-              icon="fi fi-rr-admin-alt"
-              link="../customer/list"
-            ></app-menu-item>
+            <div class="dropdown-menu-item">
+              <a class="button" routerLink="../customer/list" nz-button nzSize="large">
+                <i class="fi fi-rr-users"></i>
+              </a>
+              <div class="lh-base">
+                <p> Customer</p>
+                <small>Customer Setting</small>
+              </div>
+            </div>
+             <div class="dropdown-menu-item">
+              <a class="button" routerLink="../customer/list" nz-button nzSize="large">
+                <i class="fi fi-rr-admin-alt"></i>
+              </a>
+              <div class="lh-base">
+                <p>Role</p>
+                <small>Role Setting</small>
+              </div>
+            </div>
           </div>
         </app-drop-down-menu>
       </a>
@@ -63,7 +69,7 @@
   </section>
   <section
     id="user-section"
-    class="d-flex align-items-center col-lg-auto col-sm-4"
+    class="d-flex align-items-center "
   >
     <div class="d-flex shadow-sm align-items-center">
       <nz-avatar
@@ -93,7 +99,7 @@
         nz-button
         nzType="text"
         routerLink="../dashboard"
-        class="nav-item  p-1"
+        class="nav-item p-1"
         nzSize="small"
         routerLinkActive="active"
         >Dashboard</a
@@ -101,29 +107,35 @@
       <a
         nz-button
         nzType="text"
-        class="nav-item  p-1"
+        class="nav-item p-1"
         routerLinkActive="active"
         nzSize="small"
         (click)="dropboxClick()"
         >Profile
 
-        <app-drop-down-menu [isOpen]="dropbox">
+       <app-drop-down-menu [isOpen]="dropbox">
           <div header>
-            <p class="lh-sm" nz-typography>Profile</p>
+            <p class="lh-sm font-bold" nz-typography>Profile</p>
           </div>
           <div body>
-            <app-menu-item
-              title="Customer"
-              description="Customer Setting"
-              icon="fi fi-rr-users"
-              link="../customer/list"
-            ></app-menu-item>
-            <app-menu-item
-              title="Role"
-              description="Role Setting"
-              icon="fi fi-rr-admin-alt"
-              link="../customer/list"
-            ></app-menu-item>
+            <div class="dropdown-menu-item">
+              <a class="button" routerLink="../customer/list" nz-button nzSize="large">
+                <i class="fi fi-rr-users"></i>
+              </a>
+              <div class="lh-base">
+                <p> Customer</p>
+                <small>Customer Setting</small>
+              </div>
+            </div>
+             <div class="dropdown-menu-item">
+              <a class="button" routerLink="../customer/list" nz-button nzSize="large">
+                <i class="fi fi-rr-admin-alt"></i>
+              </a>
+              <div class="lh-base">
+                <p>Role</p>
+                <small>Role Setting</small>
+              </div>
+            </div>
           </div>
         </app-drop-down-menu>
       </a>

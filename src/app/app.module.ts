@@ -19,8 +19,9 @@ import { NzTableModule } from 'ng-zorro-antd/table'
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker'
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzModalModule , NzModalService } from 'ng-zorro-antd/modal';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import { IMAGE_LOADER, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -42,7 +43,6 @@ import { DateSortPipe } from './pipe/date-sort/date-sort.pipe';
 import { DropDownMenuComponent } from './component/component/drop-down-menu/drop-down-menu.component';
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
 import { CustomerCreateEditComponent } from './component/customer-create-edit/customer-create-edit.component';
-import { MenuItemComponent } from './component/component/menu-item/menu-item.component';
 import { ContactPersonCardComponent } from './component/component/contact-person-card/contact-person-card.component';
 
 registerLocaleData(en);
@@ -66,7 +66,6 @@ registerLocaleData(en);
     DropDownMenuComponent,
     CustomerListComponent,
     CustomerCreateEditComponent,
-    MenuItemComponent,
     ContactPersonCardComponent,
   ],
   imports: [
@@ -89,6 +88,7 @@ registerLocaleData(en);
     NzTableModule,
     NzDatePickerModule,
     NzSelectModule,
+    NzModalModule,
     NgbModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

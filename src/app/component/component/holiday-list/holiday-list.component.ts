@@ -12,7 +12,6 @@ export class HolidayListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.holiday.country)
     const flag : string  = `../../../../assets/flag-icons/${this.holiday.country}.png`
   }
 

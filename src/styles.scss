@@ -108,7 +108,7 @@ a {
 // table style
 table {
   thead {
-    background: $background-color-light;
+    background: $background-custom-color-light;
     font-weight: 400;
     white-space: nowrap;
   }
@@ -121,10 +121,12 @@ table {
 
 .ant-table-column-title
 {
-      background: $background-color-light;
+
     font-weight: 400;
 }
- 
+.ant-table-thead tr th {
+  background: $background-custom-color-light;
+}
 .ant-pagination-item-active {
   background: $primary-color-active;
 }

@@ -4,7 +4,9 @@ import {
   NzTableFilterList,
   NzTableFilterFn,
 } from 'ng-zorro-antd/table';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { from } from 'rxjs';
 
 interface ItemData {
   name: string;
@@ -85,6 +87,7 @@ export class CustomerListComponent implements OnInit {
       address: '1A Woodlands Centre Road',
     },
   ];
+  
 
   sortCustomerNameFn = (a: any, b: any) =>
     a.customer_name.localeCompare(b.customer_name);
@@ -97,7 +100,18 @@ export class CustomerListComponent implements OnInit {
   sortAddressFn = (a: any, b: any) =>
     a.address.localeCompare(b.address);
 
-  constructor() {}
-
+  constructor(public modal :NzModalService) {}
+showDeleteConfirm(): void {
+    this.modal.confirm({
+      nzTitle: 'Are you sure delete this task?',
+      nzContent: '<b style="color: red;">Some descriptions</b>',
+      nzOkText: 'Yes',
+      nzOkType: 'primary',
+      nzOkDanger: true,
+      nzOnOk: () => console.log('OK'),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
   ngOnInit(): void {}
 }
