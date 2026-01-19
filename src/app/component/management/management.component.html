@@ -1,0 +1,220 @@
+<div>
+  <app-card>
+    <div class="card-style card-pxy">
+      <div>
+        <h5 nz-typography>Organization Chart</h5>
+        <p nz-typography class="text-secondary font-medium mb-2">
+          Represent the structure of organization, displaying the hierarchy of
+          role and reporting relationships.
+        </p>
+      </div>
+      <nz-tabset>
+        <nz-tab nzTitle="Organization Chart List">
+          <div class="d-lg-flex align-items-end justify-content-between pb-3">
+            <div class="row col-lg-6">
+              <div class="col-lg-6">
+                <label for="allSearch" nz-typography class="font-medium"
+                  >All Search</label
+                >
+                <input nz-input placeholder="All Search " id="allSearch" />
+              </div>
+              <div class="col-lg-6">
+                <label for="country" nz-typography class="font-medium"
+                  >Country</label
+                >
+                <nz-select nzPlaceHolder="Please Select" class="d-block">
+                  <nz-option nzValue="Opt1" nzLabel="All"></nz-option>
+                  <nz-option nzValue="Opt2" nzLabel="Myanmar"></nz-option>
+                  <nz-option nzValue="Opt3" nzLabel="Singapore"></nz-option>
+                  <nz-option nzValue="Opt4" nzLabel="Thailand"></nz-option>
+                </nz-select>
+              </div>
+            </div>
+            <div class="">
+              <button
+                nzType="primary"
+                (click)="callModal('Edit Organization Chart')"
+                nz-button
+              >
+                <i class="fi fi-rr-add p-1"></i>create
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-auto">
+            <nz-table
+              #Table
+              [nzShowSizeChanger]="true"
+              [nzShowTotal]="range"
+              [nzData]="chartList"
+            >
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Country</th>
+                  <th>Date From</th>
+                  <th>Date To</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let chart of Table.data">
+                  <td>{{ chart.chart_name }}</td>
+                  <td>
+                    <nz-tag [nzColor]="countryTagColor[chart.region]">{{
+                      chart.region
+                    }}</nz-tag>
+                  </td>
+                  <td>{{ chart.start_date }}</td>
+                  <td>{{ chart.end_date }}</td>
+                  <td>
+                    <i class="fi fi-rr-eye mx-1"></i>
+                    <i class="fi fi-rr-download mx-1"></i>
+                    <i
+                      class="fi fi-rr-edit mx-1"
+                      (click)="callModal('Edit Organization Chart')"
+                    ></i>
+                    <i
+                      class="fi fi-rr-trash mx-1"
+                      (click)="confirmBox()"
+                      *ngIf="chart.can_remove"
+                    ></i>
+                  </td>
+                </tr>
+              </tbody>
+            </nz-table>
+
+            <ng-template #range let-range="range" let-total class="float-left">
+              <p nz-typography class="font-bold">
+                Showing {{ range[0] }} to {{ range[1] }} of {{ total }} entries
+              </p>
+            </ng-template>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="Singapore Organization Structure">
+          <div class="ratio ratio-21x9">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="../../../assets/chart/Singapore.png" class="o" alt="" />
+            </div>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="Myanmar Organization Structure">
+          <div class="ratio ratio-21x9">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="../../../assets/chart/Myanmar.png" class="" alt="" />
+            </div>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="Thailand Organization Structure">
+          <div class="ratio ratio-21x9">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="../../../assets/chart/Thailand.png" class="" alt="" />
+            </div>
+          </div>
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </app-card>
+
+  <div>
+    <!-- modalbox for create , edit  -->
+    <nz-modal
+      [(nzVisible)]="isVisibleCreateEdit"
+      [nzTitle]="modalTitle"
+      nzCloseIcon="close"
+      (nzOnCancel)="toggleModal()"
+      nzNoAnimation
+    >
+      <ng-container *nzModalContent>
+        <div class="pb-3">
+          <label for="contactName" nz-typography class="font-medium"
+            >Name</label
+          >
+          <input nz-input placeholder="Contact Name" id="contactName" />
+        </div>
+        <div class="pb-3">
+          <label for="country" nz-typography class="font-medium">Country</label>
+          <nz-select nzPlaceHolder="Please Select" class="d-block">
+            <nz-option nzValue="Opt1" nzLabel="All"></nz-option>
+            <nz-option nzValue="Opt2" nzLabel="Myanmar"></nz-option>
+            <nz-option nzValue="Opt3" nzLabel="Singapore"></nz-option>
+            <nz-option nzValue="Opt4" nzLabel="Thailand"></nz-option>
+          </nz-select>
+        </div>
+        <div class="pb-3">
+          <label for="createdDate" nz-typography class="font-medium"
+            >Created Date</label
+          >
+          <nz-date-picker class="d-block"></nz-date-picker>
+        </div>
+        <div>
+          <nz-upload
+            nzType="drag"
+            [nzMultiple]="true"
+            [nzBeforeUpload]="beforeUpload"
+          >
+            <p class="ant-upload-drag-icon mb-0">
+                <i class="fi fi-rr-upload fs-4 "></i>
+            </p>
+            <p class="ant-upload-text">
+              Click or drag file to this area to upload
+            </p>
+            <p class="ant-upload-hint">
+              Only .csv file support
+            </p>
+          </nz-upload>
+        </div>
+        <div>
+          <label for="remake" nz-typography class="font-medium">Remark</label>
+          <textarea
+            nz-input
+            placeholder="Remark"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="4"
+          ></textarea>
+        </div>
+      </ng-container>
+      <ng-container *nzModalFooter>
+        <button nz-button (click)="toggleModal()">Cancel</button>
+        <button nz-button nzType="primary" (click)="toggleModal()">
+          Create
+        </button>
+      </ng-container>
+    </nz-modal>
+    <!-- modalbox for view chart -->
+    <nz-modal
+      [(nzVisible)]="isVisibleViewChart"
+      [nzTitle]="modalTitle"
+      nzCloseIcon="close"
+      (nzOnCancel)="toggleModal()"
+      nzNoAnimation
+    >
+      <ng-container *nzModalContent>
+        <div class="pb-3">
+          <label for="contactName" nz-typography class="font-medium"
+            >Contact Name</label
+          >
+          <input nz-input placeholder="Contact Name" id="contactName" />
+        </div>
+        <div class="pb-3">
+          <label for="contactEmail" nz-typography class="font-medium"
+            >Contact Email</label
+          >
+          <input nz-input placeholder="Contact Email" id="contactEmail" />
+        </div>
+        <div class="pb-3">
+          <label for="contactPhone" nz-typography class="font-medium"
+            >Contact Phone</label
+          >
+          <input nz-input placeholder="Contact Phone" id="contactPhone" />
+        </div>
+        <label nz-checkbox>Is this important contact</label>
+      </ng-container>
+      <ng-container *nzModalFooter>
+        <button nz-button (click)="toggleModal()">Cancel</button>
+        <button nz-button nzType="primary" (click)="toggleModal()">Ok</button>
+      </ng-container>
+    </nz-modal>
+  </div>
+</div>

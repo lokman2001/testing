@@ -8,6 +8,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTabsModule } from 'ng-zorro-antd/tabs'
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzImageModule } from 'ng-zorro-antd/image';
@@ -20,6 +21,8 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker'
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzModalModule , NzModalService } from 'ng-zorro-antd/modal';
+import { NzUploadModule } from 'ng-zorro-antd/upload'
+import { NzMessageModule } from 'ng-zorro-antd/message'
 import { en_US } from 'ng-zorro-antd/i18n';
 import { IMAGE_LOADER, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -44,7 +47,8 @@ import { DropDownMenuComponent } from './component/component/drop-down-menu/drop
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
 import { CustomerCreateEditComponent } from './component/customer-create-edit/customer-create-edit.component';
 import { ContactPersonCardComponent } from './component/component/contact-person-card/contact-person-card.component';
-import { ModelServiceService } from './service/model-service.service';
+
+import { ManagementComponent } from './component/management/management.component';
 
 registerLocaleData(en);
 
@@ -68,6 +72,7 @@ registerLocaleData(en);
     CustomerListComponent,
     CustomerCreateEditComponent,
     ContactPersonCardComponent,
+    ManagementComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,9 +95,12 @@ registerLocaleData(en);
     NzDatePickerModule,
     NzSelectModule,
     NzModalModule,
+    NzTabsModule,
+    NzUploadModule,
+    NzMessageModule,
     NgbModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, ModelServiceService],
+  providers: [{ provide: NZ_I18N, useValue: en_US },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

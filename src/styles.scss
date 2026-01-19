@@ -162,5 +162,10 @@ table {
 }
 span.ant-modal-close-x
  {
-    color: $neutral-1;
+    color: $neutral-5;
+}
+.ant-upload-span{
+  border: $border-color-base $border-width-base $border-style-base;
+  border-radius: $border-radius-base;
+  padding: $padding-sm;
 }

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
+import { ManagementComponent } from './component/management/management.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,7 +34,10 @@ const routes: Routes = [
           },
         ],
       },
-
+      {
+        path : "management",
+        component : ManagementComponent
+      },
       {
         path: '',
         pathMatch: 'full',

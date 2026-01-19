@@ -1,13 +1,6 @@
-import {
-  NzTableSortOrder,
-  NzTableSortFn,
-  NzTableFilterList,
-  NzTableFilterFn,
-} from 'ng-zorro-antd/table';
 import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { ModalServiceService } from 'src/app/service/modal-service.service';
-import { from } from 'rxjs';
-import { ModelServiceService } from 'src/app/service/model-service.service';
+
 
 interface ItemData {
   name: string;
