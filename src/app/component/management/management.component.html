@@ -33,7 +33,7 @@
             <div class="">
               <button
                 nzType="primary"
-                (click)="callModal('Edit Organization Chart')"
+                (click)="callModal('Create Organization Chart')"
                 nz-button
               >
                 <i class="fi fi-rr-add p-1"></i>create
@@ -127,10 +127,10 @@
     >
       <ng-container *nzModalContent>
         <div class="pb-3">
-          <label for="contactName" nz-typography class="font-medium"
+          <label for="Name" nz-typography class="font-medium"
             >Name</label
           >
-          <input nz-input placeholder="Contact Name" id="contactName" />
+          <input nz-input placeholder="Name" id="Name" />
         </div>
         <div class="pb-3">
           <label for="country" nz-typography class="font-medium">Country</label>
@@ -147,7 +147,7 @@
           >
           <nz-date-picker class="d-block"></nz-date-picker>
         </div>
-        <div>
+        <div class="pb-3">
           <nz-upload
             nzType="drag"
             [nzMultiple]="true"
