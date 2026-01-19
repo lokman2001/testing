@@ -44,6 +44,7 @@ import { DropDownMenuComponent } from './component/component/drop-down-menu/drop
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
 import { CustomerCreateEditComponent } from './component/customer-create-edit/customer-create-edit.component';
 import { ContactPersonCardComponent } from './component/component/contact-person-card/contact-person-card.component';
+import { ModelServiceService } from './service/model-service.service';
 
 registerLocaleData(en);
 
@@ -91,7 +92,7 @@ registerLocaleData(en);
     NzModalModule,
     NgbModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, ModelServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

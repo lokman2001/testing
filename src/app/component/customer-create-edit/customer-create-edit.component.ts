@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalServiceService } from 'src/app/service/modal-service.service';
 
 @Component({
   selector: 'app-customer-create-edit',
@@ -29,7 +30,19 @@ export class CustomerCreateEditComponent implements OnInit {
       important : false
     }
   ];
-  constructor(public router: Router) {
+  public isVisible = false
+  public modalTitle = ""
+  public delete = ()=>{
+    this.modal.showDeleteConfirm();
+  }
+  public callModal(title : string){
+    this.modalTitle = title
+    this.toggleModal()
+  }
+  public toggleModal = ()=>{
+    this.isVisible = !this.isVisible
+  }
+  constructor(public router: Router , public modal: ModalServiceService) {
     this.currentUrl= this.router.url
     if(this.currentUrl === "/customer/create"){
       this.option = "Create"

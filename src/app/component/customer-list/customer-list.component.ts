@@ -5,8 +5,9 @@ import {
   NzTableFilterFn,
 } from 'ng-zorro-antd/table';
 import { Component, Inject, Injectable, OnInit } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd/modal';
+import { ModalServiceService } from 'src/app/service/modal-service.service';
 import { from } from 'rxjs';
+import { ModelServiceService } from 'src/app/service/model-service.service';
 
 interface ItemData {
   name: string;
@@ -87,31 +88,20 @@ export class CustomerListComponent implements OnInit {
       address: '1A Woodlands Centre Road',
     },
   ];
-  
 
   sortCustomerNameFn = (a: any, b: any) =>
     a.customer_name.localeCompare(b.customer_name);
   sortInitialNameFn = (a: any, b: any) =>
     a.initial_name.localeCompare(b.initial_name);
-  sortPhoneFn = (a: any, b: any) =>
-    a.phone.localeCompare(b.phone);
-  sortFaxFn = (a: any, b: any) =>
-    a.fax.localeCompare(b.fax);
-  sortAddressFn = (a: any, b: any) =>
-    a.address.localeCompare(b.address);
+  sortPhoneFn = (a: any, b: any) => a.phone.localeCompare(b.phone);
+  sortFaxFn = (a: any, b: any) => a.fax.localeCompare(b.fax);
+  sortAddressFn = (a: any, b: any) => a.address.localeCompare(b.address);
 
-  constructor(public modal :NzModalService) {}
-showDeleteConfirm(): void {
-    this.modal.confirm({
-      nzTitle: 'Are you sure delete this task?',
-      nzContent: '<b style="color: red;">Some descriptions</b>',
-      nzOkText: 'Yes',
-      nzOkType: 'primary',
-      nzOkDanger: true,
-      nzOnOk: () => console.log('OK'),
-      nzCancelText: 'No',
-      nzOnCancel: () => console.log('Cancel')
-    });
+  public confirmBox() {
+    this.modal.showDeleteConfirm()
   }
+
+  constructor(public modal : ModalServiceService) {}
+
   ngOnInit(): void {}
 }

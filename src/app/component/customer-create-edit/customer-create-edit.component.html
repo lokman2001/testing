@@ -2,7 +2,7 @@
   <app-card>
     <div class="card-style card-pxy">
       <form action="">
-        <h5 nz-typography class="font-bold">Customer {{option}}</h5>
+        <h5 nz-typography class="font-bold">Customer {{ option }}</h5>
         <div class="row">
           <div class="col-lg-6 pb-3">
             <label for="CustomerName" nz-typography class="font-medium"
@@ -32,12 +32,7 @@
         <fieldset class="row fieldset">
           <span
             class="small position-absolute bg-white"
-            style="
-              top: 0;
-              left: 15px;
-              transform: translateY(-50%);
-              width: auto;
-            "
+            style="top: 0; left: 15px; transform: translateY(-50%); width: auto"
             >Address</span
           >
 
@@ -98,13 +93,21 @@
             <label for="IBMAgreement" nz-typography class="font-medium"
               >IBM Agreement Number</label
             >
-            <input nz-input placeholder="IBM Agreement Number" id="IBMAgreement" />
+            <input
+              nz-input
+              placeholder="IBM Agreement Number"
+              id="IBMAgreement"
+            />
           </div>
           <div class="col-lg-6 pb-3">
             <label for="IBMCustomer" nz-typography class="font-medium"
               >IBM Customer Number</label
             >
-            <input nz-input placeholder="IBM Customer Number" id="IBMCustomer" />
+            <input
+              nz-input
+              placeholder="IBM Customer Number"
+              id="IBMCustomer"
+            />
           </div>
           <div class="col-lg-6 pb-3">
             <label for="IBMSite" nz-typography class="font-medium"
@@ -116,7 +119,7 @@
             <label for="Anniversary" nz-typography class="font-medium"
               >Anniversary</label
             >
-            <nz-date-picker class="d-block"></nz-date-picker>   
+            <nz-date-picker class="d-block"></nz-date-picker>
           </div>
         </div>
         <fieldset class="d-flex flex-column gap-4 fieldset">
@@ -131,21 +134,69 @@
             >Contact Person</span
           >
           <div>
-            <button nzType="primary" nz-button>
+            <button nzType="primary" (click)="callModal('Add Contact Person')" nz-button>
               <i class="fi fi-rr-add p-1"></i>Add Contact Person
             </button>
+            <nz-modal
+              [(nzVisible)]="isVisible"
+              [nzTitle]="modalTitle"
+              nzCloseIcon="close"
+              (nzOnCancel)="toggleModal()"
+              nzNoAnimation
+            >
+              <ng-container *nzModalContent>
+                <div class="pb-3">
+                  <label for="contactName" nz-typography class="font-medium"
+                    >Contact Name</label
+                  >
+                  <input nz-input placeholder="Contact Name" id="contactName" />
+                </div>
+                <div class="pb-3">
+                  <label for="contactEmail" nz-typography class="font-medium"
+                    >Contact Email</label
+                  >
+                  <input
+                    nz-input
+                    placeholder="Contact Email"
+                    id="contactEmail"
+                  />
+                </div>
+                <div class="pb-3">
+                  <label for="contactPhone" nz-typography class="font-medium"
+                    >Contact Phone</label
+                  >
+                  <input
+                    nz-input
+                    placeholder="Contact Phone"
+                    id="contactPhone"
+                  />
+                  
+                </div>
+                <label nz-checkbox>Is this important contact</label>
+              </ng-container>
+              <ng-container *nzModalFooter>
+                <button nz-button (click)="toggleModal()">Cancel</button>
+                <button nz-button nzType="primary" (click)="toggleModal()">
+                  Create
+                </button>
+              </ng-container>
+            </nz-modal>
           </div>
           <div class="row g-2 align-items-stretch">
             <div class="col-lg-4" *ngFor="let contact of contacts">
               <app-contact-person-card
-                [contact]="contact"
+                [contact]="contact" (edit)="callModal('Edit Contact Person')" (delete)="delete()"
               ></app-contact-person-card>
             </div>
           </div>
         </fieldset>
         <div class="d-flex justify-content-end gap-2">
-          <button nz-button nzType="default" routerLink="../list">Cancel</button>
-          <button nz-button nzType="primary" routerLink="../list">Create</button>
+          <button nz-button nzType="default" routerLink="../list">
+            Cancel
+          </button>
+          <button nz-button nzType="primary" routerLink="../list">
+            Create
+          </button>
         </div>
       </form>
     </div>

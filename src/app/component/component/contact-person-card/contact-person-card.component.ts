@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-contact-person-card',
@@ -7,6 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContactPersonCardComponent implements OnInit {
   @Input() contact :any = {};
+  @Output() edit = new EventEmitter<any>()
+  @Output() delete = new EventEmitter<any>()
+  clickEdit(){
+    this.edit.emit()
+  }
+  clickDelete(){
+    this.delete.emit()
+  }
   constructor() {}
 
   ngOnInit(): void {}
