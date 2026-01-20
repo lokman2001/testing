@@ -5,7 +5,7 @@
 @import "@fontsource/poppins/500.css";
 
 @import "~bootstrap/scss/bootstrap";
-@import "~@flaticon/flaticon-uicons/css/all/all";
+@import "~@flaticon/flaticon-uicons/css/all/all.css";
 @import "./tokens/build/scss/variables";
 
 * {
@@ -52,8 +52,7 @@ label {
   margin: 0;
 }
 
-.small
-{
+.small {
   font-size: $text-size-sm;
 }
 a {
@@ -119,10 +118,8 @@ table {
 }
 //custom style change
 
-.ant-table-column-title
-{
-
-    font-weight: 400;
+.ant-table-column-title {
+  font-weight: 400;
 }
 .ant-table-thead tr th {
   background: $background-custom-color-light;
@@ -154,18 +151,43 @@ table {
 .ant-pagination-next {
   text-align: center;
 }
-.ant-modal-header{
+.ant-modal-header {
   background: $primary-base;
 }
-.ant-modal-title{
+.ant-modal-title {
   color: $neutral-1;
 }
-span.ant-modal-close-x
- {
-    color: $neutral-5;
+span.ant-modal-close-x {
+  color: $neutral-5;
 }
-.ant-upload-span{
-  border: $border-color-base $border-width-base $border-style-base;
-  border-radius: $border-radius-base;
-  padding: $padding-sm;
+.ant-upload-list-picture .ant-upload-list-item-error,
+.ant-upload-list-picture-card .ant-upload-list-item-error {
+  color: $text-color !important;
+  border-color: $border-color-base;
 }
+
+.ant-upload-list-picture .ant-upload-list-item-thumbnail {
+  width: auto;
+  height: auto;
+  line-height: normal;
+}
+.ant-upload-list-item-error,
+.ant-upload-list-item-error .ant-upload-text-icon > .anticon,
+.ant-upload-list-item-error .ant-upload-list-item-name {
+  color: $text-color;
+}
+.ant-upload-list-picture
+  .ant-upload-list-item-error
+  .ant-upload-list-item-thumbnail
+  .anticon
+  svg
+  path[fill="#1890ff"],
+.ant-upload-list-picture-card
+  .ant-upload-list-item-error
+  .ant-upload-list-item-thumbnail
+  .anticon
+  svg
+  path[fill="#1890ff"] {
+  fill: $text-color;
+}
+

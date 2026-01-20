@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { error } from 'console';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzUploadFile } from 'ng-zorro-antd/upload';
+import { NzUploadFile, NzUploadListComponent } from 'ng-zorro-antd/upload';
+import { map, Observable } from 'rxjs';
 import { ModalServiceService } from 'src/app/service/modal-service.service';
 
 @Component({
@@ -69,6 +71,8 @@ export class ManagementComponent implements OnInit {
   public isVisibleCreateEdit = false
   public isVisibleViewChart = false
   public modalTitle = ""
+  public imgSrc = ""
+  public fileList : NzUploadFile[] =[]
   public delete = ()=>{
     this.modal.showDeleteConfirm();
   }
@@ -82,15 +86,28 @@ export class ManagementComponent implements OnInit {
   public confirmBox() {
     this.modal.showDeleteConfirm()
   }
+  
   public beforeUpload = ( file : NzUploadFile ):boolean =>{
     const isCSV = file.type === 'text/csv'
-    console.log(file.type)
+    
     if(!isCSV){
       this.message.create('error','Sorry, only .csv file support!')
     }
+    console.log(this.fileList)
     return isCSV
   }
-  constructor(public modal: ModalServiceService ,public message : NzMessageService) {}
+    public toggleModalView = ()=>{
+    this.isVisibleViewChart = !this.isVisibleViewChart
+  }
+  public removeFile = (i : number )=>{
+    // const index = this.fileList.indexOf(file)
+    const newList = this.fileList.slice()
+    newList.splice(i,1)
+    this.fileList = newList
+    return true;
+  }
 
+  constructor(public modal: ModalServiceService ,public message : NzMessageService) {
+  }
   ngOnInit(): void {}
 }

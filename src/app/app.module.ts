@@ -23,6 +23,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzModalModule , NzModalService } from 'ng-zorro-antd/modal';
 import { NzUploadModule } from 'ng-zorro-antd/upload'
 import { NzMessageModule } from 'ng-zorro-antd/message'
+import { NzListModule } from 'ng-zorro-antd/list'
 import { en_US } from 'ng-zorro-antd/i18n';
 import { IMAGE_LOADER, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -98,6 +99,7 @@ registerLocaleData(en);
     NzTabsModule,
     NzUploadModule,
     NzMessageModule,
+    NzListModule,
     NgbModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US },],

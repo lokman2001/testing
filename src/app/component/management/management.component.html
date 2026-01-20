@@ -30,7 +30,7 @@
                 </nz-select>
               </div>
             </div>
-            <div class="">
+            <div class="pt-2">
               <button
                 nzType="primary"
                 (click)="callModal('Create Organization Chart')"
@@ -50,10 +50,10 @@
             >
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Country</th>
-                  <th>Date From</th>
-                  <th>Date To</th>
+                  <th [nzShowSort]="true">Name</th>
+                  <th [nzShowSort]="true">Country</th>
+                  <th [nzShowSort]="true">Date From</th>
+                  <th [nzShowSort]="true">Date To</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -68,7 +68,10 @@
                   <td>{{ chart.start_date }}</td>
                   <td>{{ chart.end_date }}</td>
                   <td>
-                    <i class="fi fi-rr-eye mx-1"></i>
+                    <i
+                      class="fi fi-rr-eye mx-1"
+                      (click)="toggleModalView()"
+                    ></i>
                     <i class="fi fi-rr-download mx-1"></i>
                     <i
                       class="fi fi-rr-edit mx-1"
@@ -92,24 +95,37 @@
           </div>
         </nz-tab>
         <nz-tab nzTitle="Singapore Organization Structure">
-          <div class="ratio ratio-21x9">
-            <div class="d-flex justify-content-center align-items-center">
-              <img src="../../../assets/chart/Singapore.png" class="o" alt="" />
-            </div>
+          <div class="chart">
+            <img src="../../../assets/chart/Singapore.png" alt="" />
           </div>
         </nz-tab>
         <nz-tab nzTitle="Myanmar Organization Structure">
-          <div class="ratio ratio-21x9">
-            <div class="d-flex justify-content-center align-items-center">
-              <img src="../../../assets/chart/Myanmar.png" class="" alt="" />
-            </div>
+          <div class="chart">
+            <img src="../../../assets/chart/Myanmar.png" alt="" />
           </div>
         </nz-tab>
         <nz-tab nzTitle="Thailand Organization Structure">
-          <div class="ratio ratio-21x9">
-            <div class="d-flex justify-content-center align-items-center">
-              <img src="../../../assets/chart/Thailand.png" class="" alt="" />
+          <div class="chart">
+            <div *ngIf="imgSrc !== ''; else empty">
+              <img
+              
+              src="../../../assets/chart/{{imgSrc}}"
+              alt=""
+            />
             </div>
+            
+            <ng-template #empty>
+              <nz-empty
+                nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+                [nzNotFoundContent]="contentTpl"
+              >
+                <ng-template #contentTpl>
+                  <span>
+                    There is no organization chart right now
+                  </span>
+                </ng-template>
+              </nz-empty>
+            </ng-template>
           </div>
         </nz-tab>
       </nz-tabset>
@@ -127,9 +143,7 @@
     >
       <ng-container *nzModalContent>
         <div class="pb-3">
-          <label for="Name" nz-typography class="font-medium"
-            >Name</label
-          >
+          <label for="Name" nz-typography class="font-medium">Name</label>
           <input nz-input placeholder="Name" id="Name" />
         </div>
         <div class="pb-3">
@@ -151,18 +165,31 @@
           <nz-upload
             nzType="drag"
             [nzMultiple]="true"
-            [nzBeforeUpload]="beforeUpload"
+            nzListType="picture"
+            [nzShowUploadList]="false"
+            [(nzFileList)]="fileList"
+            [nzFileListRender]="FileLists"
           >
             <p class="ant-upload-drag-icon mb-0">
-                <i class="fi fi-rr-upload fs-4 "></i>
+              <i class="fi fi-rr-upload fs-4"></i>
             </p>
             <p class="ant-upload-text">
               Click or drag file to this area to upload
             </p>
-            <p class="ant-upload-hint">
-              Only .csv file support
-            </p>
+            <p class="ant-upload-hint">Only .csv file supported</p>
           </nz-upload>
+          <ng-template #FileLists let-list>
+            <div class="list-wrapper">
+              <span class="list-item" *ngFor="let item of list">
+                <div class="d-flex align-items-center">
+                  <i class="fi fi-rr-file fs-4 pt-1 pe-1"></i>
+                  <span nz-typography nzEllipsis>{{ item.name }}</span>
+                </div>
+
+                <i class="fi fi-rr-trash fs-6" (click)="removeFile(item)"></i>
+              </span>
+            </div>
+          </ng-template>
         </div>
         <div>
           <label for="remake" nz-typography class="font-medium">Remark</label>
@@ -185,35 +212,18 @@
     <!-- modalbox for view chart -->
     <nz-modal
       [(nzVisible)]="isVisibleViewChart"
-      [nzTitle]="modalTitle"
+      nzTitle="Chart"
       nzCloseIcon="close"
-      (nzOnCancel)="toggleModal()"
+      (nzOnCancel)="toggleModalView()"
       nzNoAnimation
     >
       <ng-container *nzModalContent>
-        <div class="pb-3">
-          <label for="contactName" nz-typography class="font-medium"
-            >Contact Name</label
-          >
-          <input nz-input placeholder="Contact Name" id="contactName" />
+        <div class="chart-on-modal">
+          <img src="../../../assets/chart/Myanmar.png" class="w-100" alt="" />
         </div>
-        <div class="pb-3">
-          <label for="contactEmail" nz-typography class="font-medium"
-            >Contact Email</label
-          >
-          <input nz-input placeholder="Contact Email" id="contactEmail" />
-        </div>
-        <div class="pb-3">
-          <label for="contactPhone" nz-typography class="font-medium"
-            >Contact Phone</label
-          >
-          <input nz-input placeholder="Contact Phone" id="contactPhone" />
-        </div>
-        <label nz-checkbox>Is this important contact</label>
       </ng-container>
       <ng-container *nzModalFooter>
-        <button nz-button (click)="toggleModal()">Cancel</button>
-        <button nz-button nzType="primary" (click)="toggleModal()">Ok</button>
+        <button nz-button (click)="toggleModalView()">Ok</button>
       </ng-container>
     </nz-modal>
   </div>
